@@ -28,7 +28,7 @@ public class ProductController {
 
 
     //    Post product - Rest EndPoint
-    @PostMapping("/products")
+    @RequestMapping(method = RequestMethod.POST,value = "/products")
     public String postProduct(@RequestBody Product Inputproduct){
         try{
             service.postProduct(Inputproduct);
@@ -47,6 +47,7 @@ public class ProductController {
             service.updateProduct(Inputproduct,id);
         }
         catch(Exception e){
+            e.printStackTrace();
             return "Failed to update the product";
         }
         return "Success";
