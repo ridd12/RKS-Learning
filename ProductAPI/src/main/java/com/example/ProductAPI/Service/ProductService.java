@@ -32,7 +32,7 @@ public class ProductService {
                 productsList.remove(iterator);
                 break;
             }
-            iterator+=1;
+            iterator=iterator+1;
         }
         return;
     }
